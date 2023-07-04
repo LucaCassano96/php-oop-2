@@ -25,7 +25,7 @@ Stampiamo delle card contenenti i dettagli dei `prodotti`, come `immagine`, `tit
 
 <?php
 
-foreach ($products as $product) {
+    foreach ($products as $product) {
     
     ?> 
     
@@ -102,7 +102,7 @@ foreach ($products as $product) {
         </div>
     
     <?php
-}
+    }
 
 ?>
 

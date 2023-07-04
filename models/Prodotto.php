@@ -23,13 +23,24 @@ class Prodotto {
     }
 
     public function setImmagine($immagine) {
+
+        if (strlen($immagine) < 1) {
+            throw new Exception("Image can't be empty");
+        }
+
         $this -> immagine = $immagine;
     }
 
     public function getTitolo() {
         return $this -> titolo;
     }
+
     public function setTitolo($titolo) {
+
+        if (strlen($titolo) < 1) {
+            throw new Exception("Title can't be empty");
+        }
+
         $this -> titolo = $titolo;
     }
 

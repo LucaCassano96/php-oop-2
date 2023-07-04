@@ -7,6 +7,8 @@ require_once("./models/Cuccia.php");
 require_once("./models/Gioco.php");
 
 
+try {
+   
 $categoriaCani = new Categoria("Cani","https://www.grantennistoscana.it/wp-content/uploads/2023/06/cane-anziano-04-06-2023-grantennistoscana.it_.jpg");
 
 $categoriaGatti = new Categoria("Gatti","https://i.pinimg.com/736x/db/70/63/db70633ad36f3ef8b12b153fcda81984--twitter-cover-twitter-headers.jpg");
@@ -23,6 +25,12 @@ $cucciaMaxiCiccioGatto = new Cuccia("https://img-prod.tgcom24.mediaset.it/images
 $giocoCaneArmageddon = new Gioco("https://m.media-amazon.com/images/I/71K+yq5qrUL._AC_UF1000,1000_QL80_.jpg","Gioco Cane Armageddon","100$",$categoriaCani,"plastica", "2x6");
 
 $giochiPreziosiGattoni = new Gioco("https://publish.purewow.net/wp-content/uploads/sites/2/2019/09/23-arched-cat-brush-and-self-groomer.png?fit=680%2C489","Giochi Preziosi Gattoni","150$", $categoriaGatti, "plastica" , "20x6");
+
+} catch (Exception  $e) {
+    echo "Error: " . $e -> getMessage();
+}
+
+
 
 
 $products = array (
