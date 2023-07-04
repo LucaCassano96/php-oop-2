@@ -1,21 +1,20 @@
 <?php
 
-class Product {
+class Prodotto {
 
     private $immagine;
     private $titolo;
     private $prezzo;
-    private $iconaCategoria;
-    private $tipoDiArticolo;
+    
+    private Categoria $categoria;
 
 
-    public function __construct($immagine,$titolo,$prezzo,$iconaCategoria,$tipoDiArticolo) {
+    public function __construct($immagine, $titolo, $prezzo, Categoria $categoria) {
 
         $this -> setImmagine($immagine);
         $this -> setTitolo($titolo);
         $this -> setPrezzo($prezzo);
-        $this -> setIconaCategoria($iconaCategoria);
-        $this -> setTipoDiArticolo($tipoDiArticolo);
+        $this -> setCategoria($categoria);
 
     }
 
@@ -42,20 +41,12 @@ class Product {
         $this -> prezzo = $prezzo;
     }
 
-    public function getIconaCategoria() {
-        return $this -> iconaCategoria;
+    public function getCategoria() {
+        return $this -> categoria;
     }
 
-    public function setIconaCategoria($iconaCategoria) {
-        $this -> iconaCategoria = $iconaCategoria;
-    }
-
-    public function getTipoDiArticolo() {
-        return $this -> tipoDiArticolo;
-    }
-
-    public function setTipoDiArticolo($tipoDiArticolo) {
-        $this -> tipoDiArticolo = $tipoDiArticolo;
+    public function setCategoria($categoria) {
+        $this -> categoria = $categoria;
     }
     
 }
