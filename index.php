@@ -23,13 +23,140 @@ Stampiamo delle card contenenti i dettagli dei `prodotti`, come `immagine`, `tit
    
     <h1>Fattoria degli animali</h1>
 
-    <?php 
-       
-        var_dump ($products); 
-    ?>
+<?php
+
+foreach ($products as $product) {
+    
+    ?> 
+    
+        <div class="card">
+            <h2>
+                <?php echo $product -> getTitolo(); ?>
+            </h2>
+            <img src="<?php echo $product -> getImmagine(); ?>" alt="">
+            <div class="prezzo">
+                <?php echo $product -> getPrezzo(); ?>
+            </div>
+            <div class="categoria">
+                <?php echo $product -> getCategoria() -> getNome() ; ?>
+            </div>
+
+            <img class="icona" src="<?php echo $product -> getCategoria() -> getIcona(); ?>" alt="">
+                
+            <div class="info">
+
+                
+
+                <div>
+                    <?php 
+                        if (method_exists($product, 'getMarca')) {
+                            echo $product -> getMarca();
+                        }
+                    ?>
+                </div>
+
+                <div>
+                    <?php 
+                        if (method_exists($product, 'getPeso')) {
+                            echo $product -> getPeso();
+                            } 
+                    ?>
+                </div>
+              
+                <div>
+                    <?php 
+                        if (method_exists($product, 'getIngredienti')) {
+                            echo $product -> getIngredienti();
+                        } 
+                    ?>
+                </div>
+
+                <div>
+                    <?php 
+                        if (method_exists($product, 'getMateriale')) {
+                            echo $product -> getMateriale();
+                        } 
+                    ?>
+                </div>
+
+                <div>
+                    <?php 
+                        if (method_exists($product, 'getDimensioni')) {
+                            echo $product -> getDimensioni();
+                        } 
+                    ?>
+                </div>
+                
+                <div>
+                    <?php 
+                        if (method_exists($product, 'getForma')) {
+                            echo $product -> getForma();
+                        } 
+                    ?>
+                </div>
+
+
+            
+            </div>
+          
+        </div>
+    
+    <?php
+}
+
+?>
 
 </body>
 
 
 
 </html>
+
+<style>
+
+img{
+    width: 300px;
+}
+
+.card{
+
+    border: 2px solid #000;
+    text-align: center;
+    margin: 10px;
+    position: relative;
+}
+
+.prezzo{
+    font-size: 30px;
+    color: lightgreen;
+    padding: 20px
+}
+
+.icona {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.categoria{
+    position: absolute;
+    top: 120px;
+    left: 50px;
+    font-size: 20px;
+    color: lightblue;
+}
+
+.info{
+    padding: 10px;
+    border: 1px solid #000;
+    color: blue;
+    font-size: 25px;
+
+}
+
+
+</style>

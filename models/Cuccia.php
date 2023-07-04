@@ -3,15 +3,15 @@
 class Cuccia extends Prodotto {
 
     private $materiale;
-    private $dimensione;
+    private $dimensioni;
     private $forma;
     
-    public function __construct($immagine, $titolo, $prezzo, $categoria, $materiale, $dimensione, $forma) {
+    public function __construct($immagine, $titolo, $prezzo, $categoria, $materiale, $dimensioni, $forma) {
 
         parent::__construct($immagine, $titolo, $prezzo, $categoria);
 
         $this -> setMateriale($materiale);
-        $this -> setDimensione($dimensione);
+        $this -> setDimensioni($dimensioni);
         $this -> setForma($forma);
     }
 
@@ -23,12 +23,12 @@ class Cuccia extends Prodotto {
         $this -> materiale = $materiale;
     }
 
-    public function getDimensione() {
-        return $this -> dimensione;
+    public function getDimensioni() {
+        return $this -> dimensioni;
     }
 
-    public function setDimensione($dimensione) {
-        $this -> dimensione = $dimensione;
+    public function setDimensioni($dimensioni) {
+        $this -> dimensioni = $dimensioni;
     }
 
     public function getForma() {
